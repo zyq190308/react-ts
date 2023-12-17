@@ -49,6 +49,9 @@ devDependencies:
   '@craco/craco':
     specifier: ^7.1.0
     version: 7.1.0(@types/node@16.18.66)(postcss@8.4.32)(react-scripts@5.0.1)(typescript@4.9.5)
+  '@craco/types':
+    specifier: ^7.1.0
+    version: 7.1.0(eslint@8.55.0)(postcss@8.4.32)
   craco-less:
     specifier: ^3.0.1
     version: 3.0.1(@craco/craco@7.1.0)(react-scripts@5.0.1)(webpack@5.89.0)
@@ -1476,6 +1479,24 @@ packages:
       - '@types/node'
       - postcss
       - typescript
+    dev: true
+
+  /@craco/types@7.1.0(eslint@8.55.0)(postcss@8.4.32):
+    resolution: {integrity: sha512-zdyk2G9UfEItrvnB+sd3xDHB5Mf3dsD6wE+Ex6V+Nch+GSXdFGQfXD/l+ZX9hO03R1rmnJPCxrIRPJUib8Q/MQ==}
+    dependencies:
+      '@babel/types': 7.23.5
+      '@jest/types': 27.5.1
+      '@types/eslint': 8.44.8
+      autoprefixer: 10.4.16(postcss@8.4.32)
+      eslint-webpack-plugin: 3.2.0(eslint@8.55.0)(webpack@5.89.0)
+      webpack: 5.89.0
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - eslint
+      - postcss
+      - uglify-js
+      - webpack-cli
     dev: true
 
   /@cspotcode/source-map-support@0.8.1:

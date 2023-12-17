@@ -1,14 +1,7 @@
-import React from 'react';
-import { Button } from 'antd'
-import './App.less';
+import "./App.less"
 
 function App() {
-  return (
-    <div className="App">
-      hello
-      <Button type='primary'>click</Button>
-    </div>
-  );
+  return <div className="App">hello</div>
 }
 
-export default App;
+export default App

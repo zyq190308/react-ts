@@ -1,11 +1,21 @@
-import { createSlice, configureStore, PayloadAction, Dispatch } from "@reduxjs/toolkit"
+import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit"
 
+// 从 store 本身推断出 `RootState` 和 `AppDispatch` 类型
+export type RootState = ReturnType<typeof store.getState>
+// 推断出类型: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
+interface State {
+  value: number
+}
+
+// 使用该类型定义初始 state
+const initialState: State = {
+  value: 0,
+}
 
 const counterSlice = createSlice({
-  name: "counter",
-  initialState: {
-    value: 0,
-  },
+  name: "main",
+  initialState,
   reducers: {
     incremented: (state) => {
       // Redux Toolkit 允许在 reducers 中编写 "mutating" 逻辑。
@@ -26,7 +36,7 @@ export const { incremented, decremented, incrementByAmount } =
   counterSlice.actions
 
 export const asyncAdd = (amount: number) => {
-  return (dispatch:any) => {
+  return (dispatch: AppDispatch) => {
     setTimeout(() => {
       dispatch(incrementByAmount(amount))
     }, 3000)
